@@ -16,7 +16,7 @@ public class TextureConfig : AssetPostprocessor
         if (isInPath)
         {
             TextureImporter textImpt = (TextureImporter)assetImporter;
-            textImpt.anisoLevel = imptSetting.AnsiotropicLevel;
+           // textImpt.anisoLevel = imptSetting.AnsiotropicLevel;
             textImpt.textureType = TextureImporterType.Sprite;
         }
 
