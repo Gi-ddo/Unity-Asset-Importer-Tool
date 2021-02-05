@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: New ImportConfig
   m_EditorClassIdentifier: 
   MaxTextureSize: 0
-  AnsiotropicLevel: 0
+  AnsiotropicLevel: 10
