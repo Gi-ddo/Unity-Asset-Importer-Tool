@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+
 [CreateAssetMenu(fileName = "New ImportConfig", menuName = "ImportConfig")]
-public class ImportSettingsConfig : ScriptableObject
+public  class ImportSettingsConfig : ScriptableObject
 {
     [Header("Texture Import Settings")]
+
+
     [Range(0, 16)]
-    public int AnsiotropicLevel;
+    public  int AnsiotropicLevel;
+
 
 
     [Header("Audio Clip Import Settings")]

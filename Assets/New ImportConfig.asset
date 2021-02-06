@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2c6c8429071c04ca91b5fc40215316, type: 3}
   m_Name: New ImportConfig
   m_EditorClassIdentifier: 
-  AnsiotropicLevel: 2
+  AnsiotropicLevel: 4
   SampleRate: 0
   CompressFormat: 0
   LoadType: 0

@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class AudioClipConfig : MonoBehaviour
+public class AudioClipConfig : AssetPostprocessor
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnPreprocessAudio()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (assetPath.Contains("SampleAssets"))
+        {
+            AudioImporter audioImporter = (AudioImporter)assetImporter;
+            audioImporter.forceToMono = true;
+            
+        }
     }
 }

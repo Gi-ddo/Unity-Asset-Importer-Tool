@@ -5,20 +5,21 @@ using UnityEditor;
 
 public class TextureConfig : AssetPostprocessor
 {
-   public ImportSettingsConfig imptSetting;
-    void OnPostprocessTexture(Texture2D texture)
+
+
+    ImportSettingsConfig importConfig = ScriptableObject.CreateInstance<ImportSettingsConfig>();
+
+    void OnPreprocessTexture()
     {
-
-        string path = assetPath.ToLower();
-        bool isInPath = path.IndexOf("/SampleAssets/") != -1;
-
-
-        if (isInPath)
+        if (assetPath.Contains("SampleAssets"))
         {
-            TextureImporter textImpt = (TextureImporter)assetImporter;
-           // textImpt.anisoLevel = imptSetting.AnsiotropicLevel;
-            textImpt.textureType = TextureImporterType.Sprite;
-        }
+            TextureImporter textureImporter = (TextureImporter)assetImporter;
+            //textureImporter.convertToNormalmap = false;
+            //textureImporter.textureType = TextureImporterType.Sprite;
+            textureImporter.anisoLevel = importConfig.AnsiotropicLevel;
+            //textureImporter.maxTextureSize = 
+            Debug.Log(importConfig.AnsiotropicLevel);
 
+        }
     }
 }
