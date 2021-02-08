@@ -12,7 +12,7 @@ assets.(Ability to optionally override these settings for the Android platform.)
 -The tool has a  configurable scriptable asset that will be used to configure the import settings of assets.
 
 - You need to create an instance of the scriptable asset by navigating to Assets > Create > ImportConfig.
-after creating it give it a suitable name it will be inside the asset folder.
+After creating it give it a suitable name it will be inside the asset folder.
 
 - By clicking on the assset you will be able to see the different import settings on the inspector and an apply button to save changes made.
 
