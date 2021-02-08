@@ -19,16 +19,17 @@ public enum TextureSizes
 }
 public class TextureConfig : AssetPostprocessor
 {
-    // reference variables for apply button script
 
+    // reference variables for apply button script
     public static int ansioLevel;
     public static TextureSizes maxTexSize;
+    public static bool androidOverride;
 
 
     // runs everytime an texture asset is imported
-    void OnPreprocessTexture()
+     public  void OnPreprocessTexture()
     {
-
+       
         //Finds asset in SampleAssets folder
         if (assetPath.Contains("SampleAssets"))
         {
@@ -37,6 +38,18 @@ public class TextureConfig : AssetPostprocessor
 
             textureImporter.anisoLevel = ansioLevel;
             textureImporter.maxTextureSize = (int)maxTexSize;
+            TextureImporterPlatformSettings _platformSettings = textureImporter.GetPlatformTextureSettings("Android");
+
+            //Override android settings for texture size;
+            if (androidOverride == true)
+            {
+                _platformSettings.maxTextureSize = (int)maxTexSize;
+                _platformSettings.overridden = true;
+                textureImporter.SetPlatformTextureSettings(_platformSettings);
+            }
+           
         }
+
+
     }
 }

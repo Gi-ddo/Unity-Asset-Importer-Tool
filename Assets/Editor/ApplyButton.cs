@@ -13,15 +13,24 @@ public class ApplyButton : Editor
 
         ImportSettingsConfig temp = (ImportSettingsConfig)target;
 
+      
         //Applying changes when button is pressed
         if (GUILayout.Button("Apply", GUILayout.Height(20), GUILayout.Width(60)))
         {
             Debug.Log("Import Settings Applied");
+
             TextureConfig.ansioLevel = temp.AnsiotropicLevel;
-            TextureConfig.maxTexSize = (TextureSizes)(int)temp.MaxTextureSize;
+            int maxTextureSize = (int)temp.MaxTextureSize;
+            TextureConfig.maxTexSize = (TextureSizes)maxTextureSize;
+            TextureConfig.androidOverride = temp.OverrideForAndroid;
+           
+
             AudioClipConfig._sampleRate = temp.SampleRate;
             AudioClipConfig._compressionFormat = temp.CompressFormat;
             AudioClipConfig._loadType = temp.LoadType;
+            AudioClipConfig._androidOverride = temp.OverrideForAndroid;
+            
+            
         }
     } 
 }

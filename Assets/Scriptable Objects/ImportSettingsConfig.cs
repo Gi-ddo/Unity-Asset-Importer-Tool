@@ -103,4 +103,19 @@ public  class ImportSettingsConfig : ScriptableObject
         }
     }
 
+    [SerializeField]
+    [Tooltip("Will Override texture size and all audio options for android")]
+    private bool _overrideForAndroid;
+    public bool OverrideForAndroid
+    {
+        get
+        {
+            return _overrideForAndroid;
+        }
+
+        set
+        {
+            _overrideForAndroid = value;
+        }
+    }
 }

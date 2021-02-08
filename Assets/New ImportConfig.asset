@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2c6c8429071c04ca91b5fc40215316, type: 3}
   m_Name: New ImportConfig
   m_EditorClassIdentifier: 
-  textureSizes: 256
-  _ansioLevel: 8
+  textureSizes: 1024
+  _ansioLevel: 5
   _sampleRate: 0
-  _compressionFormat: 0
-  _loadType: 0
+  _compressionFormat: 1
+  _loadType: 2
+  _overrideForAndroid: 0

@@ -12,7 +12,9 @@ public class AudioClipConfig : AssetPostprocessor
     public static AudioClipLoadType _loadType;
     public static AudioCompressionFormat _compressionFormat;
     public static AudioSampleRateSetting _sampleRate;
-    void OnPreprocessAudio()
+    public static bool _androidOverride;
+
+   public void OnPreprocessAudio()
     {
 
         //Finds asset in SampleAssets folder
@@ -24,16 +26,23 @@ public class AudioClipConfig : AssetPostprocessor
 
             //getting access to audioclip sample settings to be configured
             AudioImporterSampleSettings _sampleSettings = audioImporter.defaultSampleSettings;
+            
 
             _sampleSettings.compressionFormat = _compressionFormat;
             _sampleSettings.loadType = _loadType;
             _sampleSettings.sampleRateSetting = _sampleRate;
             
+
+           
             // Applying all sample settings
             audioImporter.defaultSampleSettings = _sampleSettings;
 
-            // Platform specific settings
-            //audioImporter.SetOverrideSampleSettings("Android", _sampleSettings);
+            if (_androidOverride == true)
+            {
+                // Platform specific settings
+                audioImporter.SetOverrideSampleSettings("Android", _sampleSettings);
+            }
+
         }
     }
 }
