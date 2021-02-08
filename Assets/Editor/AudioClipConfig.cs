@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class AudioClipConfig : AssetPostprocessor
 {
-    // runs everytime an audio asset is imported
+    
 
 
     //Reference variables for apply button script
@@ -14,17 +14,17 @@ public class AudioClipConfig : AssetPostprocessor
     public static AudioSampleRateSetting _sampleRate;
     public static bool _androidOverride;
 
-   public  void OnPreprocessAudio()
+
+    // runs everytime an audio asset is imported
+    public void OnPreprocessAudio()
     {
 
         //Finds asset in SampleAssets folder
-        AudioImporter audioImporter =  (AudioImporter)assetImporter;
-
         if (assetPath.Contains("SampleAssets"))
         {
 
             // accessing audio importer functionality to apply to assets
-           
+            AudioImporter audioImporter = (AudioImporter)assetImporter;
 
             //getting access to audioclip sample settings to be configured
             AudioImporterSampleSettings _sampleSettings = audioImporter.defaultSampleSettings;
