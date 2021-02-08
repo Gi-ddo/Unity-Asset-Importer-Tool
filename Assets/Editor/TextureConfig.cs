@@ -39,6 +39,7 @@ public class TextureConfig : AssetPostprocessor
             textureImporter.anisoLevel = ansioLevel;
             textureImporter.maxTextureSize = (int)maxTexSize;
             TextureImporterPlatformSettings _platformSettings = textureImporter.GetPlatformTextureSettings("Android");
+           
 
             //Override android settings for texture size;
             if (androidOverride == true)
@@ -47,9 +48,12 @@ public class TextureConfig : AssetPostprocessor
                 _platformSettings.overridden = true;
                 textureImporter.SetPlatformTextureSettings(_platformSettings);
             }
+
+            textureImporter.SaveAndReimport();
            
         }
 
 
     }
+
 }

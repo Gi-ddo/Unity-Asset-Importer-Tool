@@ -29,7 +29,7 @@ public class ApplyButton : Editor
             AudioClipConfig._compressionFormat = temp.CompressFormat;
             AudioClipConfig._loadType = temp.LoadType;
             AudioClipConfig._androidOverride = temp.OverrideForAndroid;
-            
+
             
         }
     } 
