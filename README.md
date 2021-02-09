@@ -16,7 +16,8 @@ After creating it give it a suitable name it will be inside the asset folder.
 
 - By clicking on the assset you will be able to see the different import settings on the inspector and an apply button to save changes made.
 
--After clicking apply,the import settings will be applied to every texture and audioclip asset imported into the "SampleAssets" folder.
+-After clicking apply you will recieve some feedback on the console "Import Settinngs applied". This means the settings have been successfully set.
+The import settings will be applied to every texture and audioclip asset imported into the "SampleAssets" folder.
 
 - Below I will provide a link to some example assets that can be used to test the tool's functionality.
 
