@@ -34,7 +34,7 @@ To update the settings to those set by the tool, the user will have to reimport 
 
 - How I plan to fix this?
 
--I need to figure out a way to let Unity Know that an asset has been modified. To do this in Unity you need to set the target object to dirty, once it has been set to dirty
+I need to figure out a way to let Unity Know that an asset has been modified. To do this in Unity you need to set the target object to dirty, once it has been set to dirty
 every time a user clicks on the apply button the button needs to be able to save and reimport the modified asset import settings to existing assets inside the target folder.
 This approach will allow the assets to automatically update inside the target folder after a manual change to the tool's settings.
 
